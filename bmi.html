@@ -41,7 +41,7 @@
         <!-- required 為必填 -->
         <input type="number" name="weight" id="weight" placeholder="75(公斤)" step="0.1" required>
         <p>
-            <button type="submit">計算</button>
+            <button type="submit" onclick="calc()">計算</button>
         </p>
 
 
@@ -49,16 +49,27 @@
     <a href="index.html">回首頁</a>
 
     <script>
+        //取得元件
+        function calc() {
+            const heightEl = document.querySelector("#height");
+            const weightEl = document.querySelector("#weight");
 
+            console.log(heightEl, weightEl);
 
+            let height = heightEl.value;
+            let weight = weightEl.value;
 
-        //外部輸入
-        let height = Number(prompt("請輸入身高(cm):"))
-        let weight = Number(prompt("請輸入體重(kg):"))
-        let bmi = getBMI(height, weight)
-        let comment = getComment(bmi)
-        document.write(`<h1>身高:${height} 體重:${weight}  BMI=${bmi.toFixed(2)}`)
-        document.write(`<h2 style="color:blue">${comment}`)
+            console.log(height, weight);
+
+            //外部輸入
+            //let height = Number(prompt("請輸入身高(cm):"))
+            //let weight = Number(prompt("請輸入體重(kg):"))
+            let bmi = getBMI(height, weight)
+            let comment = getComment(bmi)
+            document.write(`<h1>身高:${height} 體重:${weight}  BMI=${bmi.toFixed(2)}`)
+            document.write(`<h2 style="color:blue">${comment}`)
+        }
+
 
         for (let i = 0; i < 0; i++) {
 
