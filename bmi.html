@@ -22,6 +22,7 @@
         }
     </style>
 
+    <script src="js/tools.js"></script>
 
 </head>
 
@@ -47,6 +48,52 @@
     </form>
     <a href="index.html">回首頁</a>
 
+    <script>
+
+
+
+        //外部輸入
+        let height = Number(prompt("請輸入身高(cm):"))
+        let weight = Number(prompt("請輸入體重(kg):"))
+        let bmi = getBMI(height, weight)
+        let comment = getComment(bmi)
+        document.write(`<h1>身高:${height} 體重:${weight}  BMI=${bmi.toFixed(2)}`)
+        document.write(`<h2 style="color:blue">${comment}`)
+
+        for (let i = 0; i < 0; i++) {
+
+            //提示輸入第幾次
+            alert(`目前第${i + 1}輸入`)
+            let x = Number(prompt("請輸入第一個數字:"));
+            let y = Number(prompt("請輸入第二個數字:"));
+            let op = prompt("請輸入(+-*/ q>>exit):");
+            if (op == "q") break;
+
+            let z;
+            if (op == "+") {
+                z = x + y;
+            } else if (op == "-") {
+                z = x - y;
+            } else if (op == "*") {
+                z = x * y;
+            } else if (op == "/") {
+                z = x / y;
+            } else {
+                alert("輸入錯誤!!")
+            }
+
+            console.log(x, y, z);
+
+            // Math.round 四捨五入到個位數 toFixed 約束小數點
+            document.write(`<br><b>x=${x}, y=${y}, x${op}y=${z.toFixed(2)}</b>`);
+
+        }
+
+
+
+
+    </script>
+    </script>
 </body>
 
 </html>
